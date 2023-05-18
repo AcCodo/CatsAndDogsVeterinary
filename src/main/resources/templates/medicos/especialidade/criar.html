@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{fragments/cabecalho :: head('Pagina Inicial')}"></header>
+
+<body>
+
+<nav th:replace="~{fragments/menuNav :: navbar()}"></nav>
+<nav th:replace="~{fragments/subNav :: subnavbar()}"></nav>
+
+
+<div class="container mt-5">
+		<h2 class="text-center">Cadastrar Especialidade</h2>
+		<form method="post" action="/medicos/especialidades/criar">
+			<p>Descrição da Especialidade: <input type="text" name="descricao" id="descricao" /></p>
+			<p>Duração padrão de consulta (em minutos): <input type="number" name="duracaoConsulta" id="duracaoConsulta" /></p>
+			<input type="submit" value="Salvar" />
+		</form>
+	</div>
+
+</body>
+</html>
