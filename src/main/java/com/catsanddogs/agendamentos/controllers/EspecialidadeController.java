@@ -58,4 +58,10 @@ public class EspecialidadeController {
 		return "redirect:/medicos/especialidades";
 	} 
 	
+	@GetMapping("/deletar/{id}")
+    public String delete(@PathVariable("id")Long id) {
+        espRep.deleteById(id);
+        return "redirect:/medicos/especialidades";
+    }
+	
 }
