@@ -11,10 +11,11 @@
 
 <div class="container mt-5">
 		<h2 class="text-center">Editar Especialidade</h2>
-		<form method="POST" action="/medicos/especialidades/editar/">
-			<input type="hidden" name="idEspecialidade" id="idEspecialidade" th:value="idEspecialidade">
-			<p>Descrição da Especialidade: <input type="text" name="descricao" id="descricao" /></p>
-			<p>Duração padrão de consulta (em minutos): <input type="number" name="duracaoConsulta" id="duracaoConsulta" /></p>
+		<form method="POST" th:action="${especialidade.id}" th:object="${especialidade}">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token != null ? _csrf.token : ''}"/>			
+			<p>Descrição da Especialidade: <input type="text" name="descricao" id="descricao" th:value="${especialidade.descricao}" /></p>
+			<p>Duração padrão de consulta (em minutos): <input type="number" name="duracaoConsulta" id="duracaoConsulta" th:value="${especialidade.duracaoConsulta}" /></p>
 			<input type="submit" value="Salvar" />
 		</form>
 	</div>
