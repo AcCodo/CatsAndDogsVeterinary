@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{fragments/cabecalho :: head('Pagina Inicial')}"></header>
+
+<body>
+
+<nav th:replace="~{fragments/menuNav :: navbar()}"></nav>
+<nav th:replace="~{fragments/subNav :: subnavbarM()}"></nav>
+
+
+<div class="container mt-5">
+		<h2 class="text-center">Editar Médico</h2>
+		<form method="POST" th:action="${medico.id}" th:object="${medico}">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token != null ? _csrf.token : ''}"/>
+			<p>Nome: <input type="text" name="nome" id="nome" th:value="${medico.nome}"/></p>
+			<p>CRV: <input type="text" name="crv" id="crv" th:value="${medico.crv}"/></p>
+			<select name="especialidadeId" id="especialidadeId">
+				<option value="0" disabled selected>Selecione a especialidade</option>
+				<option th:each="especialidade : ${especialidades}" th:value="${especialidade.getId()}" th:text="${especialidade.getDescricao()}" th:selected="${medico.especialidadeId}"></option>
+			</select>
+			<br><br>
+			<input type="submit" value="Salvar" />
+		</form>
+	</div>
+
+</body>
+</html>
