@@ -1,6 +1,9 @@
 package com.catsanddogs.agendamentos.models;
 
 import java.sql.Time;
+import java.time.LocalTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,123 +22,125 @@ public class Medico {
 	
 	private Long especialidadeId;
 	
-	private Time segundaHoraInicio, segundaHoraFinal;
-	private Time tercaHoraInicio, tercaHoraFinal;
-	private Time quartaHoraInicio, quartaHoraFinal;
-	private Time quintaHoraInicio, quintaHoraFinal;
-	private Time sextaHoraInicio, sextaHoraFinal;
-	private Time sabadoHoraInicio, sabadoHoraFinal;
-	private Time domingoHoraInicio, domingoHoraFinal;
+	@JsonFormat(pattern="HH:mm")
+	private LocalTime segundaHoraInicio, segundaHoraFinal;
+	private LocalTime tercaHoraInicio, tercaHoraFinal;
+	private LocalTime quartaHoraInicio, quartaHoraFinal;
+	private LocalTime quintaHoraInicio, quintaHoraFinal;
+	private LocalTime sextaHoraInicio, sextaHoraFinal;
+	private LocalTime sabadoHoraInicio, sabadoHoraFinal;
+	private LocalTime domingoHoraInicio, domingoHoraFinal;
 
-	public Time getSegundaHoraInicio() {
+
+	public LocalTime getSegundaHoraInicio() {
 		return segundaHoraInicio;
 	}
 
-	public void setSegundaHoraInicio(Time segundaHoraInicio) {
+	public void setSegundaHoraInicio(LocalTime segundaHoraInicio) {
 		this.segundaHoraInicio = segundaHoraInicio;
 	}
 
-	public Time getSegundaHoraFinal() {
+	public LocalTime getSegundaHoraFinal() {
 		return segundaHoraFinal;
 	}
 
-	public void setSegundaHoraFinal(Time segundaHoraFinal) {
+	public void setSegundaHoraFinal(LocalTime segundaHoraFinal) {
 		this.segundaHoraFinal = segundaHoraFinal;
 	}
 
-	public Time getTercaHoraInicio() {
+	public LocalTime getTercaHoraInicio() {
 		return tercaHoraInicio;
 	}
 
-	public void setTercaHoraInicio(Time tercaHoraInicio) {
+	public void setTercaHoraInicio(LocalTime tercaHoraInicio) {
 		this.tercaHoraInicio = tercaHoraInicio;
 	}
 
-	public Time getTercaHoraFinal() {
+	public LocalTime getTercaHoraFinal() {
 		return tercaHoraFinal;
 	}
 
-	public void setTercaHoraFinal(Time tercaHoraFinal) {
+	public void setTercaHoraFinal(LocalTime tercaHoraFinal) {
 		this.tercaHoraFinal = tercaHoraFinal;
 	}
 
-	public Time getQuartaHoraInicio() {
+	public LocalTime getQuartaHoraInicio() {
 		return quartaHoraInicio;
 	}
 
-	public void setQuartaHoraInicio(Time quartaHoraInicio) {
+	public void setQuartaHoraInicio(LocalTime quartaHoraInicio) {
 		this.quartaHoraInicio = quartaHoraInicio;
 	}
 
-	public Time getQuartaHoraFinal() {
+	public LocalTime getQuartaHoraFinal() {
 		return quartaHoraFinal;
 	}
 
-	public void setQuartaHoraFinal(Time quartaHoraFinal) {
+	public void setQuartaHoraFinal(LocalTime quartaHoraFinal) {
 		this.quartaHoraFinal = quartaHoraFinal;
 	}
 
-	public Time getQuintaHoraInicio() {
+	public LocalTime getQuintaHoraInicio() {
 		return quintaHoraInicio;
 	}
 
-	public void setQuintaHoraInicio(Time quintaHoraInicio) {
+	public void setQuintaHoraInicio(LocalTime quintaHoraInicio) {
 		this.quintaHoraInicio = quintaHoraInicio;
 	}
 
-	public Time getQuintaHoraFinal() {
+	public LocalTime getQuintaHoraFinal() {
 		return quintaHoraFinal;
 	}
 
-	public void setQuintaHoraFinal(Time quintaHoraFinal) {
+	public void setQuintaHoraFinal(LocalTime quintaHoraFinal) {
 		this.quintaHoraFinal = quintaHoraFinal;
 	}
 
-	public Time getSextaHoraInicio() {
+	public LocalTime getSextaHoraInicio() {
 		return sextaHoraInicio;
 	}
 
-	public void setSextaHoraInicio(Time sextaHoraInicio) {
+	public void setSextaHoraInicio(LocalTime sextaHoraInicio) {
 		this.sextaHoraInicio = sextaHoraInicio;
 	}
 
-	public Time getSextaHoraFinal() {
+	public LocalTime getSextaHoraFinal() {
 		return sextaHoraFinal;
 	}
 
-	public void setSextaHoraFinal(Time sextaHoraFinal) {
+	public void setSextaHoraFinal(LocalTime sextaHoraFinal) {
 		this.sextaHoraFinal = sextaHoraFinal;
 	}
 
-	public Time getSabadoHoraInicio() {
+	public LocalTime getSabadoHoraInicio() {
 		return sabadoHoraInicio;
 	}
 
-	public void setSabadoHoraInicio(Time sabadoHoraInicio) {
+	public void setSabadoHoraInicio(LocalTime sabadoHoraInicio) {
 		this.sabadoHoraInicio = sabadoHoraInicio;
 	}
 
-	public Time getSabadoHoraFinal() {
+	public LocalTime getSabadoHoraFinal() {
 		return sabadoHoraFinal;
 	}
 
-	public void setSabadoHoraFinal(Time sabadoHoraFinal) {
+	public void setSabadoHoraFinal(LocalTime sabadoHoraFinal) {
 		this.sabadoHoraFinal = sabadoHoraFinal;
 	}
 
-	public Time getDomingoHoraInicio() {
+	public LocalTime getDomingoHoraInicio() {
 		return domingoHoraInicio;
 	}
 
-	public void setDomingoHoraInicio(Time domingoHoraInicio) {
+	public void setDomingoHoraInicio(LocalTime domingoHoraInicio) {
 		this.domingoHoraInicio = domingoHoraInicio;
 	}
 
-	public Time getDomingoHoraFinal() {
+	public LocalTime getDomingoHoraFinal() {
 		return domingoHoraFinal;
 	}
 
-	public void setDomingoHoraFinal(Time domingoHoraFinal) {
+	public void setDomingoHoraFinal(LocalTime domingoHoraFinal) {
 		this.domingoHoraFinal = domingoHoraFinal;
 	}
 

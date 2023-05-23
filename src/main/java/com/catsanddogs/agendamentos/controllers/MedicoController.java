@@ -43,6 +43,7 @@ public class MedicoController {
 	@GetMapping("/criar")
 	public ModelAndView getCriar() {
 		ModelAndView model = new ModelAndView("medicos/medicos/criar");
+		model.addObject("medico", new Medico());
 		model.addObject("especialidades", espRep.findAll());
 		return model;
 	}
