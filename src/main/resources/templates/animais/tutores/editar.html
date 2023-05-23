@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{fragments/cabecalho :: head('Pagina Inicial')}"></header>
+
+<body>
+
+<nav th:replace="~{fragments/menuNav :: navbar()}"></nav>
+<nav th:replace="~{fragments/subNav :: subnavbarA()}"></nav>
+
+
+<div class="container mt-5">
+		<h2 class="text-center">Editar Tutor</h2>
+		<form method="POST" th:action="${tutor.id}" th:object="${tutor}">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token != null ? _csrf.token : ''}"/>			
+			<p>Nome: <input type="text" name="nome" id="nome" th:value="${tutor.nome}" /></p>
+			<p>Telefone: <input type="number" name="telefone" id="telefone" th:value="${tutor.telefone}"  /></p>
+			<p>Celular: <input type="number" name="celular" id="celular" th:value="${tutor.celular}" /></p>
+			<p>Logradouro: <input type="text" name="logradouro" id="logradouro" th:value="${tutor.logradouro}" /></p>
+			<p>Número: <input type="number" name="numero" id="numero" th:value="${tutor.numero}" /></p>
+			<p>Complemento: <input type="text" name="complemento" id="complemento" th:value="${tutor.complemento}" /></p>
+			<p>Bairro: <input type="text" name="bairro" id="bairro" th:value="${tutor.bairro}" /></p>
+			<p>Cidade: <input type="text" name="cidade" id="cidade" th:value="${tutor.cidade}" /></p>
+			<p>Estado: <input type="text" name="estado" id="estado" th:value="${tutor.estado}" /></p>
+			
+			<input type="submit" value="Salvar" />
+		</form>
+	</div>
+
+</body>
+</html>
