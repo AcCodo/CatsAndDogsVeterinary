@@ -19,8 +19,6 @@ public class Medico {
 	
 	private Long especialidadeId;
 	
-	private Long[] disponibilidadeIds;
-	
 	private Time segundaHoraInicio, segundaHoraFinal;
 	private Time tercaHoraInicio, tercaHoraFinal;
 	private Time quartaHoraInicio, quartaHoraFinal;
@@ -171,14 +169,6 @@ public class Medico {
 
 	public void setEspecialidadeId(Long especialidadeId) {
 		this.especialidadeId = especialidadeId;
-	}
-
-	public Long[] getDisponibilidadeIds() {
-		return disponibilidadeIds;
-	}
-
-	public void setDisponibilidadeIds(Long[] disponibilidadeIds) {
-		this.disponibilidadeIds = disponibilidadeIds;
 	}
 	
 }
