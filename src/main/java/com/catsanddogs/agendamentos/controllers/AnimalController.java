@@ -21,7 +21,7 @@ public class AnimalController {
 		return model;
 	}
 	
-	@GetMapping("/animais")
+	@GetMapping("/tutores")
 	public ModelAndView redirectTutores() {
 		ModelAndView model = new ModelAndView("animais/tutores/index");
 		model.addObject("tutores", tutRep.findAll());

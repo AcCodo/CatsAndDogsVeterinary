@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{fragments/cabecalho :: head('Pagina Inicial')}"></header>
+
+<body>
+
+<nav th:replace="~{fragments/menuNav :: navbar()}"></nav>
+<nav th:replace="~{fragments/subNav :: subnavbarA()}"></nav>
+
+
+<div class="container mt-5">
+		<h2 class="text-center">Cadastrar Tutor</h2>
+		<form method="post" action="/animais/tutores/criar">
+			<p>Nome: <input type="text" name="nome" id="nome" /></p>
+			<p>Telefone: <input type="number" name="telefone" id="telefone" /></p>
+			<p>Celular: <input type="number" name="celular" id="celular" /></p>
+			<p>Logradouro: <input type="text" name="logradouro" id="logradouro" /></p>
+			<p>Número: <input type="number" name="numero" id="numero" /></p>
+			<p>Complemento: <input type="text" name="complemento" id="complemento" /></p>
+			<p>Bairro: <input type="text" name="bairro" id="bairro" /></p>
+			<p>Cidade: <input type="text" name="cidade" id="cidade" /></p>
+			<p>Estado: <input type="text" name="estado" id="estado" /></p>
+			<input type="submit" value="Salvar" />
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,5 +1,7 @@
 package com.catsanddogs.agendamentos.models;
 
+import java.time.DayOfWeek;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -15,7 +17,7 @@ public class DisponibilidadeDia {
 	private Long id;
 	
 	@Enumerated(EnumType.ORDINAL)
-	private DiaSemana diaSemana;
+	private DayOfWeek diaSemana;
 	
 	private int horaInicio, horaFinal;
 	
@@ -25,10 +27,10 @@ public class DisponibilidadeDia {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public DiaSemana getDiaSemana() {
+	public DayOfWeek getDiaSemana() {
 		return diaSemana;
 	}
-	public void setDiaSemana(DiaSemana diaSemana) {
+	public void setDiaSemana(DayOfWeek diaSemana) {
 		this.diaSemana = diaSemana;
 	}
 	public int getHoraInicio() {

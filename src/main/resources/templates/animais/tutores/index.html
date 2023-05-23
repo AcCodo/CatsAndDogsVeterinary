@@ -8,7 +8,33 @@
 <nav th:replace="~{fragments/menuNav :: navbar()}"></nav>
 <nav th:replace="~{fragments/subNav :: subnavbarA()}"></nav>
 
-
+<div class="container">
+		<h2>Tutores</h2>
+		<a href="/animais/tutores/criar"><button>Criar</button></a>
+		<hr>
+		<table class="table">
+			<thead>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Telefone</th>
+				<th>Celular</th>
+				<th>Endereço</th>
+				<th></th>
+				<th></th>
+			</thead>
+			<tbody>
+				<tr th:each="tutor : ${tutores}">
+					<td th:text="${tutor.getId()}"></td>
+					<td th:text="${tutor.getNome()}"></td>
+					<td th:text="${tutor.getTelefone()}"></td>
+					<td th:text="${tutor.getCelular()}"></td>
+					<td th:text="${tutor.getEnderecoString()}"></td>
+					<td><a th:href="@{/animais/tutores/deletar/{id} (id = ${tutor.getId()})}">deletar</a></td>
+					<td><a th:href="@{/animais/tutores/editar/{id} (id = ${tutor.getId()})}">editar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 
 </body>

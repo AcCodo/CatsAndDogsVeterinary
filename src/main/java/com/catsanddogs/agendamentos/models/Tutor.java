@@ -14,9 +14,10 @@ public class Tutor {
 	
 	private String nome;
 	
-	private int telefone, celular;
+	private String telefone, celular;
 	
-	private Long enderecoId;
+	private String logradouro, complemento, bairro, cidade, estado;
+	private int numero;
 
 	public Long getId() {
 		return id;
@@ -34,28 +35,72 @@ public class Tutor {
 		this.nome = nome;
 	}
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	public int getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
-	public void setCelular(int celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
-	public Long getEnderecoId() {
-		return enderecoId;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setEnderecoId(Long enderecoId) {
-		this.enderecoId = enderecoId;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public String getEnderecoString() {
+		return logradouro + " " + numero + ", " + complemento + " - " + bairro + " - " + cidade + " " + estado;
 	}
 	
 }
