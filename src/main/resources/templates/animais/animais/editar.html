@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace="~{fragments/cabecalho :: head('Pagina Inicial')}"></header>
+
+<body>
+
+<nav th:replace="~{fragments/menuNav :: navbar()}"></nav>
+<nav th:replace="~{fragments/subNav :: subnavbarA()}"></nav>
+
+
+<div class="container mt-5">
+		<h2 class="text-center">Editar Animal</h2>
+		<form method="POST" th:action="${animal.id}" th:object="${animal}">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token != null ? _csrf.token : ''}"/>
+			<p>Nome: <input type="text" name="nome" id="nome" th:value="${animal.nome}" /></p>
+			<p>Raça: <input type="text" name="raca" id="raca"th:value="${animal.raca}" /></p>
+			<p>Espécia: <input type="text" name="especie" id="especie" th:value="${animal.especie}"/></p>
+			<p>Idade: <input type="number" name="idade" id="idade" th:value="${animal.idade}"/></p>
+			<select name="tutorId" id="tutorId" th:value="${animal.tutorId}">
+				<option value="0" disabled selected>Selecione o tutor</option>
+				<option th:each="tutor : ${tutoresList}" th:value="${tutor.getId()}" th:text="${tutor.getNome()}" th:selected="${animal.getTutorId()}"></option>
+			</select>
+			<br><br>
+			<input type="submit" value="Salvar" />
+		</form>
+	</div>
+
+</body>
+</html>
