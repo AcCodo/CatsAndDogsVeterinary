@@ -80,6 +80,27 @@ public class MedicoController {
 		medExiste.setNome(medAtualizada.getNome());
 		medExiste.setEspecialidadeId(medAtualizada.getEspecialidadeId());
 		
+		medExiste.setSegundaHoraInicio(medAtualizada.getSegundaHoraInicio());
+		medExiste.setSegundaHoraFinal(medAtualizada.getSegundaHoraFinal());
+		
+		medExiste.setTercaHoraInicio(medAtualizada.getTercaHoraInicio());
+		medExiste.setTercaHoraFinal(medAtualizada.getTercaHoraFinal());
+		
+		medExiste.setQuartaHoraInicio(medAtualizada.getQuartaHoraInicio());
+		medExiste.setQuartaHoraFinal(medAtualizada.getQuartaHoraFinal());
+
+		medExiste.setQuintaHoraInicio(medAtualizada.getQuintaHoraInicio());
+		medExiste.setQuintaHoraFinal(medAtualizada.getQuintaHoraFinal());
+
+		medExiste.setSextaHoraInicio(medAtualizada.getSextaHoraInicio());
+		medExiste.setSextaHoraFinal(medAtualizada.getSextaHoraFinal());
+
+		medExiste.setSabadoHoraInicio(medAtualizada.getSabadoHoraInicio());
+		medExiste.setSabadoHoraFinal(medAtualizada.getSabadoHoraFinal());
+
+		medExiste.setDomingoHoraInicio(medAtualizada.getDomingoHoraInicio());
+		medExiste.setDomingoHoraFinal(medAtualizada.getDomingoHoraFinal());
+		
 		medRep.save(medExiste);
 		
 		return "redirect:/medicos";
