@@ -19,6 +19,8 @@ import com.catsanddogs.agendamentos.repositories.AgendamentosRepository;
 import com.catsanddogs.agendamentos.repositories.AnimaisRepository;
 import com.catsanddogs.agendamentos.repositories.MedicosRepository;
 
+import jakarta.validation.Valid;
+
 @Controller
 @RequestMapping("/agendamentos")
 public class AgendamentoController {
@@ -55,42 +57,36 @@ public class AgendamentoController {
 		return "redirect:/agendamentos";
 	}
 
-	/*
-	
 	@GetMapping("/editar/{id}")
 	public ModelAndView editarGet(@PathVariable("id") Long id) {
-		ModelAndView model = new ModelAndView("animais/animais/editar");
-		Animal especialidade = aniRep.findById(id).orElse(null);
-		model.addObject("animal", especialidade);
-		List<Tutor> listT = tutRep.findAll();
-		model.addObject("tutoresList", listT);
+		ModelAndView model = new ModelAndView("agendamentos/editar");
+		Agendamento agendamento = ageRep.findById(id).orElse(null);
+		model.addObject("agendamento", agendamento);
+		model.addObject("medicos", medRep.findAll());
+		model.addObject("animais", aniRep.findAll());
 		return model;
 	}
 	
 	@PostMapping("/editar/{id}")
-	public String edit(@PathVariable("id") Long id, @Valid @ModelAttribute("viagem") Animal aniAtualizada, BindingResult result) {
+	public String edit(@PathVariable("id") Long id, @ModelAttribute("agendamento") Agendamento ageAtualizada, BindingResult result) {
 		if (result.hasErrors()) {
 			return "editar";
 		}
 		
-		Animal aniExiste = aniRep.findById(id).orElse(null);
-		aniExiste.setEspecie(aniAtualizada.getEspecie());
-		aniExiste.setIdade(aniAtualizada.getIdade());
-		aniExiste.setNome(aniAtualizada.getNome());
-		aniExiste.setRaca(aniAtualizada.getRaca());
-		aniExiste.setTutorId(aniAtualizada.getTutorId());
+		Agendamento ageExiste = ageRep.findById(id).orElse(null);
+		ageExiste.setAnimalId(ageAtualizada.getAnimalId());
+		ageExiste.setMedicoId(ageAtualizada.getMedicoId());
+		ageExiste.setDataHora(ageAtualizada.getDataHora());
 		
-		aniRep.save(aniExiste);
+		ageRep.save(ageExiste);
 		
-		return "redirect:/animais";
-	} 
+		return "redirect:/agendamentos";
+	}
 	
 	@GetMapping("/deletar/{id}")
     public String delete(@PathVariable("id")Long id) {
-		aniRep.deleteById(id);
-        return "redirect:/animais";
+		ageRep.deleteById(id);
+        return "redirect:/agendamentos";
     }
     
-    */
-	
 }
