@@ -17,5 +17,39 @@ public class Agendamento {
 	private Long animalId, medicoId;
 	
 	private LocalDateTime dataHora;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getAnimalId() {
+		return animalId;
+	}
+
+	public void setAnimalId(Long animalId) {
+		this.animalId = animalId;
+	}
+
+	public Long getMedicoId() {
+		return medicoId;
+	}
+
+	public void setMedicoId(Long medicoId) {
+		this.medicoId = medicoId;
+	}
+
+	public LocalDateTime getDataHora() {
+		return dataHora;
+	}
+
+	public void setDataHora(LocalDateTime dataHora) {
+		this.dataHora = dataHora;
+	}
+	
+	
 	
 }
